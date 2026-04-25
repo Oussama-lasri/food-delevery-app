@@ -1,0 +1,152 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #fff;
+}
+
+.topbar-inner {
+  margin: 0 auto;
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 220px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.9rem 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  gap: 0.65rem;
+  align-items: center;
+  text-decoration: none;
+  color: #111827;
+  font-weight: 700;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.search-wrap input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+}
+
+.search-wrap input:focus {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ghost-btn,
+.solid-btn {
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.ghost-btn {
+  border: 1px solid #d1d5db;
+  background: #fff;
+}
+
+.solid-btn {
+  border: 1px solid #111827;
+  background: #111827;
+  color: #fff;
+}
+
+.welcome-user {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.chips-row {
+  margin: 0 auto;
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  max-width: 1200px;
+  padding: 0 1rem 0.9rem;
+}
+
+.chip {
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+  color: #374151;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.auth-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(17 24 39 / 35%);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.auth-card {
+  width: min(420px, 100%);
+  border-radius: 14px;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 16px 30px rgb(0 0 0 / 18%);
+}
+
+.auth-card h3 {
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.auth-body {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.auth-body input {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+
+.auth-actions {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .topbar-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+}

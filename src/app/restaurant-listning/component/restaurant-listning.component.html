@@ -1,0 +1,52 @@
+<main class="discovery-page">
+  <section class="hero">
+    <div>
+      
+      <h1>Moroccan food delivered to your door</h1>
+      <p>Discover local favorites, compare delivery times, and order in a few clicks.</p>
+    </div>
+  </section>
+
+  <section class="promo-chips">
+    @for (category of promoCategories; track category) {
+      <button class="promo-chip">{{ category }}</button>
+    }
+  </section>
+
+  <section class="restaurant-section">
+    <div class="section-header">
+      <h2>Popular nearby restaurants</h2>
+      <span>{{ restaurantList.length }} spots available</span>
+    </div>
+
+    <div class="restaurant-grid">
+      @for (restaurant of restaurantList; track restaurant.id; let index = $index) {
+        <article class="restaurant-card">
+          <img
+            [src]="'assets/restaurant-pics/' + getRandomImage()"
+            [alt]="restaurant.name"
+            class="restaurant-image"
+          />
+
+          <div class="card-content">
+            <div class="row">
+              <h3>{{ restaurant.name }}</h3>
+              <span class="rating">4.6 ★</span>
+            </div>
+
+            <p class="description">{{ restaurant.restaurantDescription || 'Authentic Moroccan cuisine.' }}</p>
+
+            <div class="meta">
+              <span>{{ getEstimatedTime(index) }}</span>
+              <span>Delivery fee 10 MAD</span>
+            </div>
+
+            <button (click)="onButtonClick(restaurant.id)" class="order-btn">
+              View menu
+            </button>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+</main>

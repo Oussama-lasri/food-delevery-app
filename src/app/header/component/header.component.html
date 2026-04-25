@@ -1,0 +1,54 @@
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" [routerLink]="['/restaurant']">
+      <span class="brand-badge">FD</span>
+      <span>Food Delivery</span>
+    </a>
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        placeholder="Search for Moroccan food, restaurants, and dishes"
+        aria-label="Search for food"
+      />
+    </div>
+
+    <div class="actions">
+      @if (isLoggedIn) {
+        <span class="welcome-user">Hi, {{ userName }}</span>
+      } @else {
+        <button class="ghost-btn" (click)="openAuth('login')">Log in</button>
+        <button class="solid-btn" (click)="openAuth('register')">Sign up</button>
+      }
+    </div>
+  </div>
+
+  <div class="chips-row">
+    @for (cuisine of cuisines; track cuisine) {
+      <button class="chip">{{ cuisine }}</button>
+    }
+  </div>
+
+  @if (isAuthOpen) {
+    <div class="auth-backdrop" (click)="closeAuth()">
+      <div class="auth-card" (click)="$event.stopPropagation()">
+        <h3>{{ authMode === 'login' ? 'Login to your account' : 'Create your account' }}</h3>
+
+        <div class="auth-body">
+          <input #authName type="text" placeholder="Full name" />
+          <input type="email" placeholder="Email address" />
+          <input type="password" placeholder="Password" />
+        </div>
+
+        <div class="auth-actions">
+          <button class="ghost-btn" (click)="closeAuth()">Cancel</button>
+          @if (authMode === 'login') {
+            <button class="solid-btn" (click)="login(authName.value)">Login</button>
+          } @else {
+            <button class="solid-btn" (click)="register(authName.value)">Register</button>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</header>
