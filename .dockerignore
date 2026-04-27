@@ -1,0 +1,6 @@
+.git
+.gitignore
+Dockerfile
+Jenkinsfile
+npm-debug.log
+dist
