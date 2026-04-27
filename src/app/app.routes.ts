@@ -4,6 +4,6 @@ import { FoodCatalogueComponent } from './food-catalogue/component/food-catalogu
 
 export const routes: Routes = [
     // {path: 'restaurant', redirectTo: 'app-restaurant-listning', pathMatch: 'full' },
-     { path: 'restaurant', component: RestaurantListningComponent, title: 'Restaurant Page' },
+     { path: '/', component: RestaurantListningComponent, title: 'Restaurant Page' },
      { path: 'food-catalogue/:id', component: FoodCatalogueComponent, title: 'Food Catalogue Page' },
 ];
