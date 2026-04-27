@@ -3,4 +3,6 @@
 Dockerfile
 Jenkinsfile
 npm-debug.log
+node_modules
 dist
+.angular
