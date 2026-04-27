@@ -20,6 +20,12 @@ tools {
       }
     }
 
+    stage('Cleanup Docker') {
+  steps {
+    sh 'docker system prune -af || true'
+  }
+}
+
     stage('Build Project') {
       steps {
         // Build the Angular project
